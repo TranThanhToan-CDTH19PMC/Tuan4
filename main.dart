@@ -23,7 +23,22 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => new _MyHomePageState();
 }
 class _MyHomePageState extends State<MyHomePage> {
+  
+  
+    Widget buildButton(String buttonText) {
+    return new Expanded(
+      child: new OutlineButton(
+        padding: new EdgeInsets.all(24.0),
+        child: new Text(
+          buttonText,
+          style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+        ),
+        onPressed: () => buttonPressed(buttonText),
+      ),
+    );
+  }
 
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,16 +61,5 @@ class _MyHomePageState extends State<MyHomePage> {
             new Expanded(
               child: new Divider(),
             ),
-      body: Center(
-        child: Column(
- MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-          ],
-        ),
-      ),
-    );
   }
 }
