@@ -84,7 +84,7 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-// Đoạn này Quang Thiện nhập nha
+// Đoạn này Quang Thiện nhập 
   Widget buildButton(String buttonText) {
     return new Expanded(
       child: new OutlineButton(
