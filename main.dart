@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(new MyApp());
 
-// Đoạn này Quang Thiện làm
+// Đoạn này Quang Thiện
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -97,8 +97,6 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
   }
-
-// Đoạn này Thiện Đoàn làm
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -117,6 +115,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       fontSize: 48.0,
                       fontWeight: FontWeight.bold,
                     ))),
+            // Đoạn này Thiện Đoàn làm
             new Expanded(
               child: new Divider(),
             ),
