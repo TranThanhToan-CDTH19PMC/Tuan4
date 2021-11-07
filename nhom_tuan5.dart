@@ -27,6 +27,43 @@ class MyApp extends StatelessWidget {
   }
 }
 
+
+class Loadding extends StatelessWidget {
+  Loadding({Key? key}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Column(
+          children: [
+            const Padding(
+                padding: EdgeInsets.only(top: 130, bottom: 40),
+                child: Icon(
+                  Icons.drafts,
+                  size: 100,
+                  color: Colors.blue,
+                )),
+            Text(
+              "SignIn",
+              textScaleFactor: 4,
+            ),
+            Text("Speak, friend, and enter"),
+            OutlinedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Email()),
+                );
+              },
+              child: Image.asset("../images/loadding.png"),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+
 Widget _buildList() {
   return ListView(
     children: [
