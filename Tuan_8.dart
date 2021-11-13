@@ -200,7 +200,10 @@ class Home extends StatelessWidget {
                 ListTile(
                   title: const Text('Security'),
                   onTap: () {
-                    // Navigator.pop(context);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Setting()),
+                    );
                   },
                 ),
                 ListTile(
@@ -1109,4 +1112,231 @@ class notification extends StatelessWidget {
       ),
     );
   }
+}
+//====== Setting ======//
+class Setting extends StatelessWidget {
+  const Setting({Key? key}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.white,
+          title: Text(
+            ' Cài đặt & quyền riêng tư',
+            style: TextStyle(
+                fontWeight: FontWeight.bold, color: Colors.black, fontSize: 15),
+            textAlign: TextAlign.justify,
+          ),
+          leading: IconButton(
+            icon: Icon(
+              Icons.keyboard_backspace,
+              color: Colors.black,
+            ),
+            onPressed: () {},
+          ),
+          actions: [
+            Icon(
+              Icons.search,
+              color: Colors.black,
+            ),
+          ],
+        ),
+        body: Center(
+          child: _buildList(),
+        ),
+      ),
+    );
+  }
+}
+
+Widget _buildList() {
+  return ListView(
+    children: [
+      Container(
+        padding: EdgeInsets.only(bottom: 10, top: 10),
+        child: Text(
+          'Tài khoản',
+          style: TextStyle(
+              fontWeight: FontWeight.bold, color: Colors.black, fontSize: 18),
+          textAlign: TextAlign.justify,
+        ),
+      ),
+      Container(
+        child: Text(
+          'Cập nhật thông tin để góp phần bảo vệ tài khoản.',
+          style: TextStyle(color: Colors.black, fontSize: 15),
+          textAlign: TextAlign.justify,
+        ),
+      ),
+      _tile(
+          'Thông tin cá nhân và tài khoản', Icons.account_circle_outlined),
+      _tile('Mật khẩu và bảo mật', Icons.security_sharp),
+      _tile('Thanh toán', Icons.payments_sharp),
+
+      //===================//
+      const Divider(
+        color: Colors.grey,
+        indent: 20,
+        endIndent: 20,
+      ),
+      Container(
+        padding: EdgeInsets.only(bottom: 10, top: 10),
+        child: Text(
+          'Tùy chọn',
+          style: TextStyle(
+              fontWeight: FontWeight.bold, color: Colors.black, fontSize: 18),
+          textAlign: TextAlign.justify,
+        ),
+      ),
+      Container(
+        child: Text(
+          'Tùy chỉnh trải nghiệm của bãn trên Facebook.',
+          style: TextStyle(color: Colors.black, fontSize: 15),
+          textAlign: TextAlign.justify,
+        ),
+      ),
+      _tile('Bảng tin', Icons.post_add),
+      _tile('Tùy chọn về cảm xúc', Icons.view_list_sharp),
+      _tile('Thông báo', Icons.notifications),
+      _tile('Bảo xem trước tin nhắn', Icons.messenger),
+      _tile('Lối tắc', Icons.lock),
+      _tile('Ngôn ngữ và khu vực', Icons.language),
+      _tile('File phương tiện', Icons.file_copy_sharp),
+      _tile('Thời gian bạn ở trên Facebook', Icons.lock_clock),
+      _tile('Chế độ tối', Icons.dark_mode),
+
+      //===================//
+      const Divider(
+        color: Colors.grey,
+        indent: 20,
+        endIndent: 20,
+      ),
+      Container(
+        padding: EdgeInsets.only(bottom: 10, top: 10),
+        child: Text(
+          'Đối tượng và chế độ hiển thị',
+          style: TextStyle(
+              fontWeight: FontWeight.bold, color: Colors.black, fontSize: 18),
+          textAlign: TextAlign.justify,
+        ),
+      ),
+      Container(
+        child: Text(
+          'Kiểm soát ai có thể xem bài viết, tin và trang cá nhân của bạn.',
+          style: TextStyle(color: Colors.black, fontSize: 15),
+          textAlign: TextAlign.justify,
+        ),
+      ),
+      _tile('Thông tin trên trang cá nhân', Icons.account_circle_outlined),
+      _tile('Cách mọi người tìm và liên hệ với bạn',
+          Icons.account_balance_outlined),
+      _tile('Bài viết', Icons.post_add_sharp),
+      _tile('Tin', Icons.message),
+      _tile('Người theo dõi và nội dung công khai', Icons.follow_the_signs),
+      _tile('Trang cá nhân và gắn thẻ', Icons.tag_faces),
+      _tile('Chặn', Icons.block),
+      _tile('Trạng thái hoạt động', Icons.account_circle),
+
+//===================//
+      const Divider(
+        color: Colors.grey,
+        indent: 20,
+        endIndent: 20,
+      ),
+      Container(
+        padding: EdgeInsets.only(bottom: 10, top: 10),
+        child: Text(
+          'Quyền',
+          style: TextStyle(
+              fontWeight: FontWeight.bold, color: Colors.black, fontSize: 18),
+          textAlign: TextAlign.justify,
+        ),
+      ),
+      Container(
+        child: Text(
+          'Quản lý thông tin nào mà Facebook có thể dùng để cải thiện trải nghiệm của bạn, chẳng hạn như sở thích hoặc vị trí.',
+          style: TextStyle(color: Colors.black, fontSize: 15),
+          textAlign: TextAlign.justify,
+        ),
+      ),
+      _tile('Tùy chọn quảng cáo', Icons.event_available_outlined),
+      _tile('Vị trí', Icons.place),
+      _tile('Nhận dạng khuôn mặt', Icons.account_box_outlined),
+      _tile('Ứng dụng và trang web', Icons.app_registration),
+      _tile('Game', Icons.games),
+      _tile('Tiện ích tích hợp cho doang nghiệp', Icons.extension),
+      _tile('Tải danh bạ lên', Icons.phone_android),
+      _tile('Trình duyệt', Icons.browser_not_supported),
+      _tile('Hoạt động bên ngoài Facebook', Icons.work),
+
+//===================//
+      const Divider(
+        color: Colors.grey,
+        indent: 20,
+        endIndent: 20,
+      ),
+      Container(
+        padding: EdgeInsets.only(bottom: 10, top: 10),
+        child: Text(
+          'Thông tin của bạn',
+          style: TextStyle(
+              fontWeight: FontWeight.bold, color: Colors.black, fontSize: 18),
+          textAlign: TextAlign.justify,
+        ),
+      ),
+      Container(
+        child: Text(
+          'Truy cập vào nhật ký hoạt động và các tùy chọn kiểm soát để quản lý thông tin của bạn trên Facebook.',
+          style: TextStyle(color: Colors.black, fontSize: 15),
+          textAlign: TextAlign.justify,
+        ),
+      ),
+      _tile('Nhật ký hoạt động', Icons.article_outlined),
+      _tile('Truy cập thông tin của bạn', Icons.assignment_ind_outlined),
+      _tile('Tải thông tin của bạn xuống', Icons.download),
+      _tile('Chuyển bản sao thông tin của bạn', Icons.folder_open),
+      _tile('Tìm hiểu cách quản lý thông tin của bạn',
+          Icons.question_answer),
+
+      //===================//
+      const Divider(
+        color: Colors.grey,
+        indent: 20,
+        endIndent: 20,
+      ),
+      Container(
+        padding: EdgeInsets.only(bottom: 10, top: 10),
+        child: Text(
+          'Tiêu chuẩn cộng đồng và chính sách pháp lý',
+          style: TextStyle(
+              fontWeight: FontWeight.bold, color: Colors.black, fontSize: 18),
+          textAlign: TextAlign.justify,
+        ),
+      ),
+      _tile('Điều khoản dịch vụ', Icons.room_service),
+      _tile('Chính sách dữ liệu', Icons.data_saver_off),
+      _tile('Chính sách cookie', Icons.policy),
+      _tile('Tiêu chuẩn cộng đồng', Icons.sticky_note_2),
+      _tile('Giới thiệu', Icons.production_quantity_limits),
+    ],
+  );
+}
+
+ListTile _tile(String title, IconData icon) {
+  return ListTile(
+    title: Text(title,
+        style: const TextStyle(
+          fontWeight: FontWeight.w500,
+          fontSize: 20,
+        )),
+    leading: Icon(
+      icon,
+      color: Colors.black,
+    ),
+  );
 }
