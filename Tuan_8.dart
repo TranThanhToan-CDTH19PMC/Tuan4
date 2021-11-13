@@ -431,3 +431,118 @@ class TryAgain extends StatelessWidget {
     );
   }
 }
+class Addfiend extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        title: Text(
+          "Lời mời kết bạn",
+          style: TextStyle(color: Colors.black),
+        ),
+      ),
+      body: ListView(
+        children: [
+          const Divider(
+            color: Colors.grey,
+            indent: 20,
+          ),
+          ListTile(
+            selected: true,
+            leading: CircleAvatar(
+              backgroundImage: AssetImage('../images/cat.jpg'),
+            ),
+            title: Text(
+              "Wibu",
+              style: TextStyle(color: Colors.black),
+            ),
+            subtitle: Text(
+              "43 bạn chung",
+              style: TextStyle(color: Colors.grey),
+            ),
+            onTap: () {},
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              OutlinedButton(
+                style: OutlinedButton.styleFrom(
+                    backgroundColor: Colors.blue,
+                    primary: Colors.white,
+                    minimumSize: Size(100, 50),
+                    padding: EdgeInsets.symmetric(horizontal: 15),
+                    shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(50)),
+                    )),
+                onPressed: () {},
+                child: Text("chấp nhận"),
+              ),
+              OutlinedButton(
+                style: OutlinedButton.styleFrom(
+                    backgroundColor: Colors.blue,
+                    primary: Colors.white,
+                    minimumSize: Size(100, 50),
+                    padding: EdgeInsets.symmetric(horizontal: 15),
+                    shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(50)),
+                    )),
+                onPressed: () {},
+                child: Text("xoá"),
+              ),
+            ],
+          ),
+          const Divider(
+            color: Colors.grey,
+            indent: 20,
+          ),
+          ListTile(
+            selected: true,
+            leading: CircleAvatar(
+              backgroundImage: AssetImage('../images/cat.jpg'),
+            ),
+            title: Text(
+              "Wibu",
+              style: TextStyle(color: Colors.black),
+            ),
+            subtitle: Text(
+              "43 bạn chung",
+              style: TextStyle(color: Colors.grey),
+            ),
+            onTap: () {},
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              OutlinedButton(
+                style: OutlinedButton.styleFrom(
+                    backgroundColor: Colors.blue,
+                    primary: Colors.white,
+                    minimumSize: Size(100, 50),
+                    padding: EdgeInsets.symmetric(horizontal: 15),
+                    shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(50)),
+                    )),
+                onPressed: () {},
+                child: Text("chấp nhận"),
+              ),
+              OutlinedButton(
+                style: OutlinedButton.styleFrom(
+                    backgroundColor: Colors.blue,
+                    primary: Colors.white,
+                    minimumSize: Size(100, 50),
+                    padding: EdgeInsets.symmetric(horizontal: 15),
+                    shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(50)),
+                    )),
+                onPressed: () {},
+                child: Text("xoá"),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
+
